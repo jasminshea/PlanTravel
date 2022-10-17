@@ -21,8 +21,13 @@
 
     <div id="modal1" class="modal">
         <div class="modal-content">
-            <h4>Please Enter Your Information</h4>
-            <p>A bunch of text</p>
+            <h4>Travel Details</h4>
+            <label for="startloc">Starting Location:</label>
+            <input type="text" id="startloc" name="startloc">
+            <label for="dest">Destination:</label>
+            <input type="text" id="dest" name="dest">
+            <label for="departure">Departure Date:</label>
+            <input type="date" id="departure" class="departure" name="departure">
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -33,7 +38,6 @@
     <!--<a class="btn-floating btn-large pulse black right waves-effect waves-light btn modal-trigger" href="#modal1">Travel</a>-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
