@@ -10,14 +10,121 @@
 </head>
 <body>
     <header>
-        <h1 class="center-align">Airline Tracker</h1>
+        <h1 class="center-align">Event Tracker</h1>
     </header>
 
     <section class="card-panel center-align white">
         <h2 class="">Welcome to our website!</h2>
-        <p>Please click the button below and enter your travel details</p>
+        <p>Please click the button below and enter your trip details</p>
+        <a href="#modal1" class="waves-effect waves-light btn-large modal-trigger">Button</a>
     </section>
-    <a class="btn-floating btn-large pulse black right waves-effect waves-light btn modal-trigger" href="#modal1">Travel</a>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Trip Details</h4>
+            <form>
+                <label for="startloc">Starting Location:</label>
+                <input type="text" id="startloc" name="startloc" list="countries">
+                <datalist id="countries">
+                    <option data-value="AU" value="Australia"></option>
+                    <option data-value="US" value="United States Of America"></option>
+                    <option data-value="AD" value="Andorra"></option>
+                    <option data-value="AI" value="Anguilla"></option>
+                    <option data-value="AR" value="Argentina"></option>
+                    <option data-value="AT" value="Austria"></option>
+                    <option data-value="AZ" value="Azerbaijan"></option>
+                    <option data-value="BS" value="Bahamas"></option>
+                    <option data-value="BH" value="Bahrain"></option>
+                    <option data-value="BB" value="Barbados"></option>
+                    <option data-value="BE" value="Belgium"></option>
+                    <option data-value="BM" value="Bermuda"></option>
+                    <option data-value="BR" value="Brazil"></option>
+                    <option data-value="BG" value="Bulgaria"></option>
+                    <option data-value="CA" value="Canada"></option>
+                    <option data-value="CL" value="Chile"></option>
+                    <option data-value="CN" value="China"></option>
+                    <option data-value="CO" value="Colombia"></option>
+                    <option data-value="CR" value="Costa Rica"></option>
+                    <option data-value="HR" value="Croatia"></option>
+                    <option data-value="CY" value="Cyprus"></option>
+                    <option data-value="CZ" value="Czech Republic"></option>
+                    <option data-value="DK" value="Denmark"></option>
+                    <option data-value="DO" value="Dominican Republic"></option>
+                    <option data-value="EC" value="Ecuador"></option>
+                    <option data-value="EE" value="Estonia"></option>
+                    <option data-value="FO" value="Faroe Islands"></option>
+                    <option data-value="FI" value="Finland"></option>
+                    <option data-value="FR" value="France"></option>
+                    <option data-value="GE" value="Georgia"></option>
+                    <option data-value="DE" value="Germany"></option>
+                    <option data-value="GH" value="Ghana"></option>
+                    <option data-value="GI" value="Gibraltar"></option>
+                    <option data-value="GB" value="Great Britain"></option>
+                    <option data-value="GR" value="Greece"></option>
+                    <option data-value="HK" value="Hong Kong"></option>
+                    <option data-value="HU" value="Hungary"></option>
+                    <option data-value="IS" value="Iceland"></option>
+                    <option data-value="IN" value="India"></option>
+                    <option data-value="IE" value="Ireland"></option>
+                    <option data-value="IL" value="Israel"></option>
+                    <option data-value="IT" value="Italy"></option>
+                    <option data-value="JM" value="Jamaica"></option>
+                    <option data-value="JP" value="Japan"></option>
+                    <option data-value="KR" value="Korea, Republic of"></option>
+                    <option data-value="LV" value="Latvia"></option>
+                    <option data-value="LB" value="Lebanon"></option>
+                    <option data-value="LT" value="Lithuania"></option>
+                    <option data-value="LU" value="Luxembourg"></option>
+                    <option data-value="MY" value="Malaysia"></option>
+                    <option data-value="MT" value="Malta"></option>
+                    <option data-value="MX" value="Mexico"></option>
+                    <option data-value="MC" value="Monaco"></option>
+                    <option data-value="ME" value="Montenegro"></option>
+                    <option data-value="MA" value="Morocco"></option>
+                    <option data-value="NL" value="Netherlands"></option>
+                    <option data-value="AN" value="Netherlands Antilles"></option>
+                    <option data-value="NZ" value="New Zealand"></option>
+                    <option data-value="ND" value="Northern Ireland"></option>
+                    <option data-value="NO" value="Norway"></option>
+                    <option data-value="PE" value="Peru"></option>
+                    <option data-value="PL" value="Poland"></option>
+                    <option data-value="PT" value="Portugal"></option>
+                    <option data-value="RO" value="Romania"></option>
+                    <option data-value="RU" value="Russian Federation"></option>
+                    <option data-value="LC" value="Saint Lucia"></option>
+                    <option data-value="SA" value="Saudi Arabia"></option>
+                    <option data-value="RS" value="Serbia"></option>
+                    <option data-value="SG" value="Singapore"></option>
+                    <option data-value="SK" value="Slovakia"></option>
+                    <option data-value="SI" value="Slovenia"></option>
+                    <option data-value="ZA" value="South Africa"></option>
+                    <option data-value="ES" value="Spain"></option>
+                    <option data-value="SE" value="Sweden"></option>
+                    <option data-value="CH" value="Switzerland"></option>
+                    <option data-value="TW" value="Taiwan"></option>
+                    <option data-value="TH" value="Thailand"></option>
+                    <option data-value="TT" value="Trinidad and Tobago"></option>
+                    <option data-value="TR" value="Turkey"></option>
+                    <option data-value="UA" value="Ukraine"></option>
+                    <option data-value="AE" value="United Arab Emirates"></option>
+                    <option data-value="UY" value="Uruguay"></option>
+                    <option data-value="VE" value="Venezuela"></option>
+                </datalist>
+            </form>
+            <label for="dest">Destination:</label>
+            <input type="text" id="dest" name="dest" list="countries">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city">
+            <label for="departure">Departure Date:</label>
+            <input type="date" id="departure" class="departure" name="departure">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+     </div>
+         
+    
+    <!--<a class="btn-floating btn-large pulse black right waves-effect waves-light btn modal-trigger" href="#modal1">Travel</a>-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/script.js"></script>
