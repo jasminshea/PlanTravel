@@ -1,0 +1,13 @@
+:root {
+    --brown: brown;
+    --tan: tan;
+    --teal: teal;
+    --lightteal: #75c5c5;
+    --light: white;
+    --dark: black;
+  }
+
+html{
+    padding: 50px;
+    background-color: var(--lightteal);
+}
