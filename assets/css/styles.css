@@ -24,7 +24,7 @@ html{
 }
 
 .event-list:hover{
-  color: var(--light);
+  color: var(--tan);
 }
 
 .curve{
