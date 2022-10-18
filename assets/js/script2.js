@@ -9,21 +9,22 @@ function printResultsEvents(resultObj) {
   //resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
 
   var resultBody = document.createElement('div');
-  //resultBody.classList.add('card-body');
+  resultBody.classList.add('collection-item');
   resultCard.append(resultBody);
 
   var titleEl = document.createElement('h3');
   titleEl.textContent = resultObj.name;
 
-  var bodyContentEl = document.createElement('p');
-  bodyContentEl.innerHTML =
+  var dateContentEl = document.createElement('p');
+  dateContentEl.innerHTML =
     '<strong>Date:</strong> ' + resultObj.dates.start.localDate + '<br/>';
 
   var linkContentEl = document.createElement('a');
   linkContentEl.innerHTML = 'Visit Eventpage';
   linkContentEl.setAttribute('href', resultObj.url);
+  linkContentEl.classList.add('secondary-content');
 
-  resultBody.append(titleEl, bodyContentEl, linkContentEl);
+  resultBody.append(titleEl, dateContentEl, linkContentEl);
   resultCard.append(resultBody);
 
   eventsContainerEl.append(resultCard);
