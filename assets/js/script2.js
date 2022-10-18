@@ -6,7 +6,7 @@ function printResultsEvents(resultObj) {
 
   // set up `<div>` to hold result content
   var resultCard = document.createElement('div');
-  //resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
+  resultCard.classList.add('event-card');
 
   var resultBody = document.createElement('div');
   //resultBody.classList.add('card-body');
@@ -22,6 +22,7 @@ function printResultsEvents(resultObj) {
   var linkContentEl = document.createElement('a');
   linkContentEl.innerHTML = 'Visit Eventpage';
   linkContentEl.setAttribute('href', resultObj.url);
+  linkContentEl.classList.add('event-list');
 
   resultBody.append(titleEl, bodyContentEl, linkContentEl);
   resultCard.append(resultBody);
