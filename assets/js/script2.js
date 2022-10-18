@@ -6,13 +6,13 @@ function printResultsEvents(resultObj) {
 
   // set up `<div>` to hold result content
   var resultCard = document.createElement('div');
-  //resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
+  resultCard.classList.add('card', 'mb3', 'p3');
 
   var resultBody = document.createElement('div');
-  resultBody.classList.add('collection-item');
+  resultBody.classList.add('collection-item', 'col','s9', 'offset-s3');
   resultCard.append(resultBody);
 
-  var titleEl = document.createElement('h3');
+  var titleEl = document.createElement('h5');
   titleEl.textContent = resultObj.name;
 
   var dateContentEl = document.createElement('p');
@@ -25,6 +25,7 @@ function printResultsEvents(resultObj) {
   linkContentEl.classList.add('secondary-content');
 
   resultBody.append(titleEl, dateContentEl, linkContentEl);
+  resultBody.classList.add('card-panel', 'curve', 'z-depth-2');
   resultCard.append(resultBody);
 
   eventsContainerEl.append(resultCard);

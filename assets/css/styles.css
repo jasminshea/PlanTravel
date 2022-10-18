@@ -11,3 +11,7 @@ html{
     padding: 50px;
     background-color: var(--lightteal);
 }
+
+.curve{
+  border-radius: 6px;
+}
