@@ -1,5 +1,5 @@
 var eventsContainerEl = document.querySelector('#events-list');
-
+var exchangeContainer = document.querySelector("#exchange-section")
 
 function printResultsEvents(resultObj) {
   console.log(resultObj);
@@ -28,6 +28,14 @@ function printResultsEvents(resultObj) {
 
   eventsContainerEl.append(resultCard);
 }
+
+function printExchangeResults(exchangeRes) {
+
+  var exchangeEl = document.querySelector('#final-exchange')
+
+  exchangeEl.innerHTML = exchangeRes
+
+}
     
     var getExchangeRates = function (localCurrency,destinationCurrency,amount) {
         var exchangeUrl = 'https://v6.exchangerate-api.com/v6/f9921cb9c7fe216d2921dff6/pair/'+ localCurrency + '/' + destinationCurrency + '/' + amount;
@@ -36,8 +44,8 @@ function printResultsEvents(resultObj) {
             .then(function(response) {
                 if (response.ok) {
                     response.json().then(function (data) {
-                    
-                      console.log(data)
+                      printExchangeResults(data.conversion_result)
+                      console.log(data.conversion_result);
 
                 })}})};
 
