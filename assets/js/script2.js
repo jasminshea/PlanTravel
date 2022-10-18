@@ -12,7 +12,7 @@ function printResultsEvents(resultObj) {
   //resultBody.classList.add('card-body');
   resultCard.append(resultBody);
 
-  var titleEl = document.createElement('h3');
+  var titleEl = document.createElement('h5');
   titleEl.textContent = resultObj.name;
 
   var bodyContentEl = document.createElement('p');
