@@ -1,4 +1,4 @@
-var eventsContainerEl = document.querySelector('#events-container');
+var eventsContainerEl = document.querySelector('#events-list');
 
 
 function printResultsEvents(resultObj) {
