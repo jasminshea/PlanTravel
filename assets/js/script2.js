@@ -1,5 +1,6 @@
 var eventsContainerEl = document.querySelector('#events-list');
 var exchangeContainer = document.querySelector("#exchange-section")
+var exchangeSubmit = document.querySelector('#submit')
 
 function printResultsEvents(resultObj) {
   console.log(resultObj);
@@ -31,11 +32,20 @@ function printResultsEvents(resultObj) {
 
 function printExchangeResults(exchangeRes) {
 
+  var inputVal = document.getElementById('current').value
+  console.log(inputVal);
+
   var exchangeEl = document.querySelector('#final-exchange')
 
   exchangeEl.innerHTML = exchangeRes
 
 }
+
+exchangeSubmit.addEventListener('submit', function(event) {
+  event.preventDefault
+  
+  
+})
     
     var getExchangeRates = function (localCurrency,destinationCurrency,amount) {
         var exchangeUrl = 'https://v6.exchangerate-api.com/v6/f9921cb9c7fe216d2921dff6/pair/'+ localCurrency + '/' + destinationCurrency + '/' + amount;
