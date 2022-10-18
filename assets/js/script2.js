@@ -19,7 +19,11 @@ function printResultsEvents(resultObj) {
   bodyContentEl.innerHTML =
     '<strong>Date:</strong> ' + resultObj.dates.start.localDate + '<br/>';
 
-  resultBody.append(titleEl, bodyContentEl);
+  var linkContentEl = document.createElement('a');
+  linkContentEl.innerHTML = 'Visit Eventpage';
+  linkContentEl.setAttribute('href', resultObj.url);
+
+  resultBody.append(titleEl, bodyContentEl, linkContentEl);
   resultCard.append(resultBody);
 
   eventsContainerEl.append(resultCard);
