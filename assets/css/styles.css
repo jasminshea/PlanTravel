@@ -15,8 +15,7 @@ html{
 
 .event-card{
   background-color: var(--teal);
-  color: var(--light);
-  border-radius: 20px;
+  color: var(--dark);
   font-size: 15px;
 }
 
@@ -26,4 +25,8 @@ html{
 
 .event-list:hover{
   color: var(--light);
+}
+
+.curve{
+  border-radius: 6px;
 }
