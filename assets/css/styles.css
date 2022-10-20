@@ -1,6 +1,6 @@
 :root {
     --brown: rgb(85, 35, 35);
-    --tan: tan;
+    --tan: rgb(206, 164, 110);
     --teal: rgb(0, 100, 100);
     --lightteal: #8abbbb;
     --light: white;
@@ -24,7 +24,7 @@ html{
 }
 
 .event-list:hover{
-  color: var(--light);
+  color: var(--tan);
 }
 
 .curve{
