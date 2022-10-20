@@ -66,7 +66,6 @@ exchangeSubmit.addEventListener('submit', function(event) {
 
 
     var getEventsQuery = function (city) {
-        console.log('date',date);
         var eventUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?size=10&city=' + city + '&apikey=fwQUN4eQAOHYscFPSE5zrM9VO4cX5QdI';
         fetch(eventUrl)
             .then(function(response) {
@@ -90,7 +89,6 @@ exchangeSubmit.addEventListener('submit', function(event) {
         var from = searchParamsArr[0].split('=').pop();
         var to = searchParamsArr[1].split('=').pop();
         var city = searchParamsArr[2].split('=').pop();
-        var date = searchParamsArr[3].split('=').pop();
 
         getEventsQuery(city);
 
