@@ -71,7 +71,6 @@ exchangeSubmit.addEventListener('submit', function(event) {
             .then(function(response) {
                 if (response.ok) {
                     response.json().then(function (data) {
-                    console.log(data)
                     eventsContainerEl.textContent = '';
                     for (var i = 0; i < 20; i++) {
                         printResultsEvents(data._embedded.events[i]);
@@ -81,17 +80,25 @@ exchangeSubmit.addEventListener('submit', function(event) {
                 })
               };
 
-      getEventsQuery('Sydney','1/1/23')
-
-      // function getParams(){
-      //   var searchParamsArr = document.location.search.split('&');
-
-      //   // Get the query and format values
-      //   var from = searchParamsArr[0].split('=').pop();
-      //   var to = searchParamsArr[1].split('=').pop();
-      //   var city = searchParamsArr[2].split('=').pop();
-      //   var dates = searchParamsArr[3].split('=').pop();
       
-      //   getEventsQuery(city,dates);
-      //   getEventsQuery(from,to,'1')
-      // }
+
+      function getParams(){
+        var searchParamsArr = document.location.search.split('&');
+        console.log(searchParamsArr);
+        //Get the query and format values
+        var from = searchParamsArr[0].split('=').pop();
+        var to = searchParamsArr[1].split('=').pop();
+        var city = searchParamsArr[2].split('=').pop();
+        var date = searchParamsArr[3].split('=').pop();
+
+        console.log(from);
+        console.log(to);
+        console.log(city);
+        console.log(date);
+
+      
+        getEventsQuery(city,date);
+        getExchangeRates(from,to,'1');
+      }
+
+      getParams();
