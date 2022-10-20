@@ -36,8 +36,11 @@ function renderPreviousInputs() {
 
   var previousLink = document.getElementById('previous')
 
-  previousLink.textContent = "Start: " + start + ", Destination: " + dest + ", City: " + city + ", Date: " + date
+  previousLink.textContent = start + " > " + dest + ": " + city + " " + date
+
+  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date
   
+  previousLink.setAttribute('href', newUrl)
 }
 
 renderPreviousInputs()
