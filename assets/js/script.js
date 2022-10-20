@@ -17,7 +17,10 @@ document.getElementById('continue').addEventListener('click', function() {
   var city = document.getElementById('city').value
   var date = document.getElementById('date').value
 
+  var previousStart = localStorage.getItem() 
+
   var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date
+
   location.href = newUrl
 })
 
