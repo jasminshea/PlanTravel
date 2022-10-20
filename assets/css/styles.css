@@ -10,7 +10,7 @@
 html{
     padding: 45px;
     background-color: var(--lightteal);
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .event-card{
