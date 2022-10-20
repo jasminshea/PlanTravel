@@ -18,6 +18,7 @@ document.getElementById('continue').addEventListener('click', function() {
   var date = document.getElementById('date').value
 
   var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date
+  location.href = newUrl
 })
 
 // Exchange Rate API
