@@ -33,6 +33,10 @@ function renderPreviousInputs() {
   var dest = localStorage.getItem("dest")
   var city = localStorage.getItem("city")
   var date = localStorage.getItem("date")
+
+  var previousLink = document.getElementById('previous')
+
+  previousLink.textContent = "Start: " + start + ", Destination: " + dest + ", City: " + city + ", Date: " + date
   
 }
 
