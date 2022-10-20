@@ -39,3 +39,11 @@ hr {
   overflow: visible;
   /* 2 */
 }
+
+#exchange-section label, input {
+  color: black;
+}
+
+#submit {
+  margin-top: 10px;
+}

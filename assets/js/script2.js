@@ -1,6 +1,5 @@
 var eventsContainerEl = document.querySelector('#events-list');
 var exchangeContainer = document.querySelector("#exchange-section")
-var exchangeSubmit = document.querySelector('#submit')
 
 function printResultsEvents(eventResult) {
   console.log(eventResult);
@@ -35,20 +34,30 @@ function printResultsEvents(eventResult) {
   eventsContainerEl.append(resultCard);
 }
 
-function printExchangeResults(exchangeRes) {
+function printExchangeResults() {
+  var searchParamsArr = document.location.search.split('&');
+
+  var from = searchParamsArr[0].split('=').pop();
+  var to = searchParamsArr[1].split('=').pop();
+
+  var fromDiv = document.getElementById('from-div')
+  var toDiv = document.getElementById('to-div')
+
+  fromDiv.textContent = from
+  toDiv.textContent = to
+
+}
+
+
+document.querySelector('#submit').addEventListener('click', function(event, exchangeRes) {
+  event.preventDefault
 
   var inputVal = document.getElementById('current').value
-  console.log(inputVal);
 
   var exchangeEl = document.querySelector('#final-exchange')
 
   exchangeEl.innerHTML = exchangeRes
 
-}
-
-exchangeSubmit.addEventListener('submit', function(event) {
-  event.preventDefault
-  
   
 })
     
@@ -102,3 +111,4 @@ exchangeSubmit.addEventListener('submit', function(event) {
       }
 
       getParams();
+      printExchangeResults()
