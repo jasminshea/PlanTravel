@@ -2,8 +2,8 @@ var eventsContainerEl = document.querySelector('#events-list');
 var exchangeContainer = document.querySelector("#exchange-section")
 var exchangeSubmit = document.querySelector('#submit')
 
-function printResultsEvents(resultObj) {
-  console.log(resultObj);
+function printResultsEvents(eventResult) {
+  console.log(eventResult);
 
   // set up `<div>` to hold result content
   var resultCard = document.createElement('div');
@@ -14,15 +14,15 @@ function printResultsEvents(resultObj) {
   resultCard.append(resultBody);
 
   var titleEl = document.createElement('h5');
-  titleEl.textContent = resultObj.name;
+  titleEl.textContent = eventResult.name;
 
   var dateContentEl = document.createElement('p');
   dateContentEl.innerHTML =
-    '<strong>Date:</strong> ' + resultObj.dates.start.localDate + '<br/>';
+    '<strong>Date:</strong> ' + eventResult.dates.start.localDate + '<br/>';
 
   var linkContentEl = document.createElement('a');
   linkContentEl.innerHTML = 'Visit Eventpage';
-  linkContentEl.setAttribute('href', resultObj.url);
+  linkContentEl.setAttribute('href', eventResult.url);
   linkContentEl.classList.add('secondary-content');
 
   resultBody.append(titleEl, dateContentEl, linkContentEl);
