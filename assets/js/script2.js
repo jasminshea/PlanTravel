@@ -65,12 +65,14 @@ exchangeSubmit.addEventListener('submit', function(event) {
                 })}})};
 
 
-    var getEventsQuery = function (city,date) {
-        var eventUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?city=' + city +'&StartLocalDateTime=' + date +'&apikey=fwQUN4eQAOHYscFPSE5zrM9VO4cX5QdI';
+    var getEventsQuery = function (city) {
+        console.log('date',date);
+        var eventUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?size=10&city=' + city + '&apikey=fwQUN4eQAOHYscFPSE5zrM9VO4cX5QdI';
         fetch(eventUrl)
             .then(function(response) {
                 if (response.ok) {
                     response.json().then(function (data) {
+                      console.log(data)
                     eventsContainerEl.textContent = '';
                     for (var i = 0; i < 20; i++) {
                         printResultsEvents(data._embedded.events[i]);
@@ -84,21 +86,15 @@ exchangeSubmit.addEventListener('submit', function(event) {
 
       function getParams(){
         var searchParamsArr = document.location.search.split('&');
-        console.log(searchParamsArr);
         //Get the query and format values
         var from = searchParamsArr[0].split('=').pop();
         var to = searchParamsArr[1].split('=').pop();
         var city = searchParamsArr[2].split('=').pop();
         var date = searchParamsArr[3].split('=').pop();
 
-        console.log(from);
-        console.log(to);
-        console.log(city);
-        console.log(date);
+        getEventsQuery(city);
 
-      
-        getEventsQuery(city,date);
         getExchangeRates(from,to,'1');
-      }
+      };
 
       getParams();
