@@ -1,15 +1,30 @@
 :root {
-    --brown: brown;
-    --tan: tan;
-    --teal: teal;
-    --lightteal: #75c5c5;
+    --brown: rgb(85, 35, 35);
+    --tan: rgb(206, 164, 110);
+    --teal: rgb(0, 100, 100);
+    --lightteal: #8abbbb;
     --light: white;
     --dark: black;
   }
 
 html{
-    padding: 50px;
+    padding: 45px;
     background-color: var(--lightteal);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.event-card{
+  background-color: var(--teal);
+  color: var(--dark);
+  font-size: 15px;
+}
+
+.event-list{
+  color: var(--dark);
+}
+
+.event-list:hover{
+  color: var(--tan);
 }
 
 .curve{
