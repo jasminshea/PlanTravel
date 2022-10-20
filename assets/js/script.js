@@ -17,12 +17,26 @@ document.getElementById('continue').addEventListener('click', function() {
   var city = document.getElementById('city').value
   var date = document.getElementById('date').value
 
-  var previousStart = localStorage.getItem() 
+  localStorage.setItem("start", start)
+  localStorage.setItem("dest", dest) 
+  localStorage.setItem("city", city) 
+  localStorage.setItem("date", date)  
 
   var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date
 
   location.href = newUrl
 })
+
+// Render previous inputs
+function renderPreviousInputs() {
+  var start = localStorage.getItem("start")
+  var dest = localStorage.getItem("dest")
+  var city = localStorage.getItem("city")
+  var date = localStorage.getItem("date")
+  
+}
+
+renderPreviousInputs()
 
 // Exchange Rate API
 //var exchangeUrl = "https://v6.exchangerate-api.com/v6/9ac30c9d3885914f5e6affff/pair/AUD/USD/5"
