@@ -62,7 +62,7 @@ exchangeSubmit.addEventListener('submit', function(event) {
                 })}})};
 
 
-    var getEventsQuery = function (search) {
+    var getEventsQuery = function (city,dates) {
         var eventUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?keyword=' + search + '&apikey=fwQUN4eQAOHYscFPSE5zrM9VO4cX5QdI';
 
         fetch(eventUrl)
@@ -79,5 +79,15 @@ exchangeSubmit.addEventListener('submit', function(event) {
                 })
               };
 
-      getEventsQuery('brisbane')
-      getExchangeRates('USD','GBP', '80')
+      function getParams(){
+        var searchParamsArr = document.location.search.split('&');
+
+        // Get the query and format values
+        var from = searchParamsArr[0].split('=').pop();
+        var to = searchParamsArr[1].split('=').pop();
+        var city = searchParamsArr[2].split('=').pop();
+        var dates = searchParamsArr[3].split('=').pop();
+      
+        getEventsQuery(city,dates);
+        getEventsQuery(from,to,'1')
+      }
