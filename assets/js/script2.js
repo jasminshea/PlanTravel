@@ -62,9 +62,8 @@ exchangeSubmit.addEventListener('submit', function(event) {
                 })}})};
 
 
-    var getEventsQuery = function (city,dates) {
-        var eventUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?keyword=' + search + '&apikey=fwQUN4eQAOHYscFPSE5zrM9VO4cX5QdI';
-
+    var getEventsQuery = function (city,date) {
+        var eventUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?city=' + city +'&StartLocalDateTime=' + date +'&apikey=fwQUN4eQAOHYscFPSE5zrM9VO4cX5QdI';
         fetch(eventUrl)
             .then(function(response) {
                 if (response.ok) {
@@ -79,15 +78,17 @@ exchangeSubmit.addEventListener('submit', function(event) {
                 })
               };
 
-      function getParams(){
-        var searchParamsArr = document.location.search.split('&');
+      getEventsQuery('Sydney','1/1/23')
 
-        // Get the query and format values
-        var from = searchParamsArr[0].split('=').pop();
-        var to = searchParamsArr[1].split('=').pop();
-        var city = searchParamsArr[2].split('=').pop();
-        var dates = searchParamsArr[3].split('=').pop();
+      // function getParams(){
+      //   var searchParamsArr = document.location.search.split('&');
+
+      //   // Get the query and format values
+      //   var from = searchParamsArr[0].split('=').pop();
+      //   var to = searchParamsArr[1].split('=').pop();
+      //   var city = searchParamsArr[2].split('=').pop();
+      //   var dates = searchParamsArr[3].split('=').pop();
       
-        getEventsQuery(city,dates);
-        getEventsQuery(from,to,'1')
-      }
+      //   getEventsQuery(city,dates);
+      //   getEventsQuery(from,to,'1')
+      // }
