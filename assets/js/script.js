@@ -22,7 +22,9 @@ document.getElementById('continue').addEventListener('click', function() {
   localStorage.setItem("start", start)
   localStorage.setItem("dest", dest) 
   localStorage.setItem("city", city) 
-  localStorage.setItem("date", date)  
+  localStorage.setItem("date", date)
+  localStorage.setItem("startData", startData)
+  localStorage.setItem("destData", destData)  
 
   var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date + '&startData=' + startData + '&destData=' + destData
 
@@ -35,12 +37,14 @@ function renderPreviousInputs() {
   var dest = localStorage.getItem("dest")
   var city = localStorage.getItem("city")
   var date = localStorage.getItem("date")
+  var startData = localStorage.getItem("startData")
+  var destData = localStorage.getItem("destData")
 
   var previousLink = document.getElementById('previous')
 
   previousLink.textContent = start + " > " + dest + ": " + city + " " + date
 
-  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date
+  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date + '&startData=' + startData + '&destData=' + destData
   
   previousLink.setAttribute('href', newUrl)
 }

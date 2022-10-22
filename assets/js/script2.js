@@ -42,20 +42,30 @@ function printExchangeResultLabel(from, to) {
 
 }
 
-function printExchangeResults(results){
-  var 
+function printExchangeResults(data) {
+  var exchangeEl = document.querySelector('#final-exchange')
+
+  exchangeEl.innerHTML = data
 }
 
-document.querySelector('#submit').addEventListener('click', function(event, exchangeRes) {
+document.querySelector('#submit').addEventListener('click', function(event) {
   event.preventDefault
+
+  var searchParamsArr = document.location.search.split('&');
+
+  var fromData = searchParamsArr[4].split('=').pop();
+  var toData = searchParamsArr[5].split('=').pop();
+
+  console.log(fromData);
+  console.log(toData);
 
   var inputVal = document.getElementById('current').value
 
-  var exchangeEl = document.querySelector('#final-exchange')
+  console.log(inputVal);
 
-  exchangeEl.innerHTML = exchangeRes
+  getExchangeRates(fromData, toData, inputVal)
 
-  
+  printExchangeResults()
 })
     
     var getExchangeRates = function (localCurrency,destinationCurrency,amount) {
@@ -105,10 +115,7 @@ document.querySelector('#submit').addEventListener('click', function(event, exch
 
         getEventsQuery(city);
 
-        getExchangeRates(fromData,toData,'1');
-
         printExchangeResultLabel(fromStr, toStr)
-        printExchangeResults(fromData,toData)
 
 
       };
