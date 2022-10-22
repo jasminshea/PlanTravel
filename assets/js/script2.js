@@ -2,8 +2,6 @@ var eventsContainerEl = document.querySelector('#events-list');
 var exchangeContainer = document.querySelector("#exchange-section")
 
 function printResultsEvents(eventResult) {
-  console.log(eventResult);
-
   // set up `<div>` to hold result content
   var resultCard = document.createElement('div');
   resultCard.classList.add('event-card');
@@ -34,7 +32,8 @@ function printResultsEvents(eventResult) {
   eventsContainerEl.append(resultCard);
 }
 
-function printExchangeResults(result, from, to, fromData, toData) {
+
+function printExchangeResultLabel(from, to) {
   var fromDiv = document.getElementById('from-div')
   var toDiv = document.getElementById('to-div')
 
@@ -43,6 +42,9 @@ function printExchangeResults(result, from, to, fromData, toData) {
 
 }
 
+function printExchangeResults(results){
+  var 
+}
 
 document.querySelector('#submit').addEventListener('click', function(event, exchangeRes) {
   event.preventDefault
@@ -77,7 +79,7 @@ document.querySelector('#submit').addEventListener('click', function(event, exch
                     response.json().then(function (data) {
                       console.log(data)
                     eventsContainerEl.textContent = '';
-                    for (var i = 0; i < 20; i++) {
+                    for (var i = 0; i < 9; i++) {
                         printResultsEvents(data._embedded.events[i]);
                     }
                     })
@@ -104,7 +106,10 @@ document.querySelector('#submit').addEventListener('click', function(event, exch
         getEventsQuery(city);
 
         getExchangeRates(fromData,toData,'1');
-        printExchangeResults(from, to, fromData, toData)
+
+        printExchangeResultLabel(fromStr, toStr)
+        printExchangeResults(fromData,toData)
+
 
       };
 
