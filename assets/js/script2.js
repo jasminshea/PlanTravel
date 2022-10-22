@@ -34,12 +34,7 @@ function printResultsEvents(eventResult) {
   eventsContainerEl.append(resultCard);
 }
 
-function printExchangeResults() {
-  var searchParamsArr = document.location.search.split('&');
-
-  var from = searchParamsArr[0].split('=').pop();
-  var to = searchParamsArr[1].split('=').pop();
-
+function printExchangeResults(result, from, to, fromData, toData) {
   var fromDiv = document.getElementById('from-div')
   var toDiv = document.getElementById('to-div')
 
@@ -102,10 +97,15 @@ document.querySelector('#submit').addEventListener('click', function(event, exch
         var toStr = to.replace(/[^a-zA-Z ]/g, '');
         var city = searchParamsArr[2].split('=').pop();
 
+        var date = searchParamsArr[3].split('=').pop();
+        var fromData = searchParamsArr[4].split('=').pop();
+        var toData = searchParamsArr[5].split('=').pop();
+
         getEventsQuery(city);
 
-        getExchangeRates(fromStr,toStr,'1');
+        getExchangeRates(fromData,toData,'1');
+        printExchangeResults(from, to, fromData, toData)
+
       };
 
       getParams();
-      printExchangeResults()

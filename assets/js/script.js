@@ -16,13 +16,15 @@ document.getElementById('continue').addEventListener('click', function() {
   var dest = document.getElementById('dest').value
   var city = document.getElementById('city').value
   var date = document.getElementById('date').value
+  var startData = document.querySelector("#countries"  + " option[value='" + start + "']").dataset.value;
+  var destData = document.querySelector("#countries"  + " option[value='" + dest + "']").dataset.value;
 
   localStorage.setItem("start", start)
   localStorage.setItem("dest", dest) 
   localStorage.setItem("city", city) 
   localStorage.setItem("date", date)  
 
-  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date
+  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date + '&startData=' + startData + '&destData=' + destData
 
   location.href = newUrl
 })
