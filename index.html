@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Document</title>
 </head>
@@ -16,7 +17,12 @@
     <section class="card-panel center-align white">
         <h2 class="">Welcome to our website!</h2>
         <p>Please click the button below and enter your trip details</p>
-        <a href="#modal1" class="waves-effect waves-light btn-large modal-trigger">Button</a>
+        <a href="#modal1" class="waves-effect waves-light btn-large modal-trigger">Click Me</a>
+    </section>
+
+    <section id="previous-section" class="center-align">
+        <h2>Previous Selection</h2>
+        <a id="previous" class="waves-effect waves-light btn-large"></a>
     </section>
 
     <div id="modal1" class="modal">
@@ -26,89 +32,86 @@
                 <label for="startloc">Starting Location:</label>
                 <input type="text" id="startloc" name="startloc" list="countries">
                 <datalist id="countries">
-                    <option data-value="AU" value="Australia"></option>
-                    <option data-value="US" value="United States Of America"></option>
-                    <option data-value="AD" value="Andorra"></option>
-                    <option data-value="AI" value="Anguilla"></option>
-                    <option data-value="AR" value="Argentina"></option>
-                    <option data-value="AT" value="Austria"></option>
-                    <option data-value="AZ" value="Azerbaijan"></option>
-                    <option data-value="BS" value="Bahamas"></option>
-                    <option data-value="BH" value="Bahrain"></option>
-                    <option data-value="BB" value="Barbados"></option>
-                    <option data-value="BE" value="Belgium"></option>
-                    <option data-value="BM" value="Bermuda"></option>
-                    <option data-value="BR" value="Brazil"></option>
-                    <option data-value="BG" value="Bulgaria"></option>
-                    <option data-value="CA" value="Canada"></option>
-                    <option data-value="CL" value="Chile"></option>
-                    <option data-value="CN" value="China"></option>
-                    <option data-value="CO" value="Colombia"></option>
-                    <option data-value="CR" value="Costa Rica"></option>
-                    <option data-value="HR" value="Croatia"></option>
-                    <option data-value="CY" value="Cyprus"></option>
-                    <option data-value="CZ" value="Czech Republic"></option>
-                    <option data-value="DK" value="Denmark"></option>
-                    <option data-value="DO" value="Dominican Republic"></option>
-                    <option data-value="EC" value="Ecuador"></option>
-                    <option data-value="EE" value="Estonia"></option>
-                    <option data-value="FO" value="Faroe Islands"></option>
-                    <option data-value="FI" value="Finland"></option>
-                    <option data-value="FR" value="France"></option>
-                    <option data-value="GE" value="Georgia"></option>
-                    <option data-value="DE" value="Germany"></option>
-                    <option data-value="GH" value="Ghana"></option>
-                    <option data-value="GI" value="Gibraltar"></option>
-                    <option data-value="GB" value="Great Britain"></option>
-                    <option data-value="GR" value="Greece"></option>
-                    <option data-value="HK" value="Hong Kong"></option>
-                    <option data-value="HU" value="Hungary"></option>
-                    <option data-value="IS" value="Iceland"></option>
-                    <option data-value="IN" value="India"></option>
-                    <option data-value="IE" value="Ireland"></option>
-                    <option data-value="IL" value="Israel"></option>
-                    <option data-value="IT" value="Italy"></option>
-                    <option data-value="JM" value="Jamaica"></option>
-                    <option data-value="JP" value="Japan"></option>
-                    <option data-value="KR" value="Korea, Republic of"></option>
-                    <option data-value="LV" value="Latvia"></option>
-                    <option data-value="LB" value="Lebanon"></option>
-                    <option data-value="LT" value="Lithuania"></option>
-                    <option data-value="LU" value="Luxembourg"></option>
-                    <option data-value="MY" value="Malaysia"></option>
-                    <option data-value="MT" value="Malta"></option>
-                    <option data-value="MX" value="Mexico"></option>
-                    <option data-value="MC" value="Monaco"></option>
-                    <option data-value="ME" value="Montenegro"></option>
-                    <option data-value="MA" value="Morocco"></option>
-                    <option data-value="NL" value="Netherlands"></option>
-                    <option data-value="AN" value="Netherlands Antilles"></option>
-                    <option data-value="NZ" value="New Zealand"></option>
-                    <option data-value="ND" value="Northern Ireland"></option>
-                    <option data-value="NO" value="Norway"></option>
-                    <option data-value="PE" value="Peru"></option>
-                    <option data-value="PL" value="Poland"></option>
-                    <option data-value="PT" value="Portugal"></option>
-                    <option data-value="RO" value="Romania"></option>
-                    <option data-value="RU" value="Russian Federation"></option>
-                    <option data-value="LC" value="Saint Lucia"></option>
-                    <option data-value="SA" value="Saudi Arabia"></option>
-                    <option data-value="RS" value="Serbia"></option>
-                    <option data-value="SG" value="Singapore"></option>
-                    <option data-value="SK" value="Slovakia"></option>
-                    <option data-value="SI" value="Slovenia"></option>
-                    <option data-value="ZA" value="South Africa"></option>
-                    <option data-value="ES" value="Spain"></option>
-                    <option data-value="SE" value="Sweden"></option>
-                    <option data-value="CH" value="Switzerland"></option>
-                    <option data-value="TW" value="Taiwan"></option>
-                    <option data-value="TH" value="Thailand"></option>
-                    <option data-value="TT" value="Trinidad and Tobago"></option>
-                    <option data-value="TR" value="Turkey"></option>
-                    <option data-value="UA" value="Ukraine"></option>
-                    <option data-value="AE" value="United Arab Emirates"></option>
-                    <option data-value="UY" value="Uruguay"></option>
-                    <option data-value="VE" value="Venezuela"></option>
+                    <option data-value="AUD" value="Australia"></option>
+                    <option data-value="USD" value="United States Of America"></option>
+                    <option data-value="EUR" value="Andorra"></option>
+                    <option data-value="ARS" value="Argentina"></option>
+                    <option data-value="EUR" value="Austria"></option>
+                    <option data-value="AZN" value="Azerbaijan"></option>
+                    <option data-value="BSD" value="Bahamas"></option>
+                    <option data-value="BHD" value="Bahrain"></option>
+                    <option data-value="BBD" value="Barbados"></option>
+                    <option data-value="EUR" value="Belgium"></option>
+                    <option data-value="BMD" value="Bermuda"></option>
+                    <option data-value="BRL" value="Brazil"></option>
+                    <option data-value="EUR" value="Bulgaria"></option>
+                    <option data-value="CAD" value="Canada"></option>
+                    <option data-value="CLP" value="Chile"></option>
+                    <option data-value="CNY" value="China"></option>
+                    <option data-value="COP" value="Colombia"></option>
+                    <option data-value="CRC" value="Costa Rica"></option>
+                    <option data-value="EUR" value="Croatia"></option>
+                    <option data-value="EUR" value="Cyprus"></option>
+                    <option data-value="CZK" value="Czech Republic"></option>
+                    <option data-value="DKK" value="Denmark"></option>
+                    <option data-value="DOP" value="Dominican Republic"></option>
+                    <option data-value="USD" value="Ecuador"></option>
+                    <option data-value="EUR" value="Estonia"></option>
+                    <option data-value="FOK" value="Faroe Islands"></option>
+                    <option data-value="EUR" value="Finland"></option>
+                    <option data-value="EUR" value="France"></option>
+                    <option data-value="GEL" value="Georgia"></option>
+                    <option data-value="EUR" value="Germany"></option>
+                    <option data-value="GHS" value="Ghana"></option>
+                    <option data-value="GIP" value="Gibraltar"></option>
+                    <option data-value="GBP" value="Great Britain"></option>
+                    <option data-value="EUR" value="Greece"></option>
+                    <option data-value="HKD" value="Hong Kong"></option>
+                    <option data-value="HUF" value="Hungary"></option>
+                    <option data-value="ISK" value="Iceland"></option>
+                    <option data-value="INR" value="India"></option>
+                    <option data-value="EUR" value="Ireland"></option>
+                    <option data-value="ILS" value="Israel"></option>
+                    <option data-value="EUR" value="Italy"></option>
+                    <option data-value="JMD" value="Jamaica"></option>
+                    <option data-value="JPY" value="Japan"></option>
+                    <option data-value="KRW" value="Korea, Republic of"></option>
+                    <option data-value="EUR" value="Latvia"></option>
+                    <option data-value="LBP" value="Lebanon"></option>
+                    <option data-value="EUR" value="Lithuania"></option>
+                    <option data-value="EUR" value="Luxembourg"></option>
+                    <option data-value="MYR" value="Malaysia"></option>
+                    <option data-value="EUR" value="Malta"></option>
+                    <option data-value="MXN" value="Mexico"></option>
+                    <option data-value="EUR" value="Monaco"></option>
+                    <option data-value="EUR" value="Montenegro"></option>
+                    <option data-value="MAD" value="Morocco"></option>
+                    <option data-value="EUR" value="Netherlands"></option>
+                    <option data-value="EUR" value="Netherlands Antilles"></option>
+                    <option data-value="NZD" value="New Zealand"></option>
+                    <option data-value="GBP" value="Northern Ireland"></option>
+                    <option data-value="NOK" value="Norway"></option>
+                    <option data-value="PEN" value="Peru"></option>
+                    <option data-value="PLN" value="Poland"></option>
+                    <option data-value="EUR" value="Portugal"></option>
+                    <option data-value="RON" value="Romania"></option>
+                    <option data-value="RUB" value="Russian Federation"></option>
+                    <option data-value="SAR" value="Saudi Arabia"></option>
+                    <option data-value="RSD" value="Serbia"></option>
+                    <option data-value="SGD" value="Singapore"></option>
+                    <option data-value="EUR" value="Slovakia"></option>
+                    <option data-value="EUR" value="Slovenia"></option>
+                    <option data-value="ZAR" value="South Africa"></option>
+                    <option data-value="EUR" value="Spain"></option>
+                    <option data-value="SEK" value="Sweden"></option>
+                    <option data-value="TWD" value="Taiwan"></option>
+                    <option data-value="THB" value="Thailand"></option>
+                    <option data-value="TTD" value="Trinidad and Tobago"></option>
+                    <option data-value="TRY" value="Turkey"></option>
+                    <option data-value="UAH" value="Ukraine"></option>
+                    <option data-value="AED" value="United Arab Emirates"></option>
+                    <option data-value="UYU" value="Uruguay"></option>
+                    <option data-value="VES" value="Venezuela"></option>
                 </datalist>
             </form>
             <label for="dest">Destination:</label>
@@ -124,7 +127,7 @@
      </div>
          
     
-    <!--<a class="btn-floating btn-large pulse black right waves-effect waves-light btn modal-trigger" href="#modal1">Travel</a>-->
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/script.js"></script>

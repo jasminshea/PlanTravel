@@ -32,9 +32,11 @@ function printResultsEvents(eventResult) {
   eventsContainerEl.append(resultCard);
 }
 
+
 function printExchangeResultLabel(from, to) {
   var fromDiv = document.getElementById('from-div')
   var toDiv = document.getElementById('to-div')
+
   fromDiv.textContent = from
   toDiv.textContent = to
 
@@ -104,8 +106,10 @@ document.querySelector('#submit').addEventListener('click', function(event, exch
         getEventsQuery(city);
 
         getExchangeRates(fromData,toData,'1');
+
         printExchangeResultLabel(fromStr, toStr)
         printExchangeResults(fromData,toData)
+
 
       };
 

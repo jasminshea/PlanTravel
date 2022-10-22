@@ -16,18 +16,34 @@ document.getElementById('continue').addEventListener('click', function() {
   var dest = document.getElementById('dest').value
   var city = document.getElementById('city').value
   var date = document.getElementById('date').value
+  var startData = document.querySelector("#countries"  + " option[value='" + start + "']").dataset.value;
+  var destData = document.querySelector("#countries"  + " option[value='" + dest + "']").dataset.value;
 
-  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date
+  localStorage.setItem("start", start)
+  localStorage.setItem("dest", dest) 
+  localStorage.setItem("city", city) 
+  localStorage.setItem("date", date)  
+
+  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date + '&startData=' + startData + '&destData=' + destData
+
   location.href = newUrl
 })
 
-// Exchange Rate API
-//var exchangeUrl = "https://v6.exchangerate-api.com/v6/9ac30c9d3885914f5e6affff/pair/AUD/USD/5"
+// Render previous inputs
+function renderPreviousInputs() {
+  var start = localStorage.getItem("start")
+  var dest = localStorage.getItem("dest")
+  var city = localStorage.getItem("city")
+  var date = localStorage.getItem("date")
 
-//fetch(exchangeUrl) 
-   // .then(function(response) {
-   //     return response.json()
-    //})
-   // .then(function (data) {
-   //     console.log(data);
-   // })
+  var previousLink = document.getElementById('previous')
+
+  previousLink.textContent = start + " > " + dest + ": " + city + " " + date
+
+  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date
+  
+  previousLink.setAttribute('href', newUrl)
+}
+
+renderPreviousInputs()
+
