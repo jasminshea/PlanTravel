@@ -1,10 +1,7 @@
 var eventsContainerEl = document.querySelector('#events-list');
 var exchangeContainer = document.querySelector("#exchange-section")
-var exchangeSubmit = document.querySelector('#submit')
 
 function printResultsEvents(eventResult) {
-  console.log(eventResult);
-
   // set up `<div>` to hold result content
   var resultCard = document.createElement('div');
   resultCard.classList.add('event-card');
@@ -35,20 +32,27 @@ function printResultsEvents(eventResult) {
   eventsContainerEl.append(resultCard);
 }
 
-function printExchangeResults(exchangeRes) {
+function printExchangeResultLabel(from, to) {
+  var fromDiv = document.getElementById('from-div')
+  var toDiv = document.getElementById('to-div')
+  fromDiv.textContent = from
+  toDiv.textContent = to
+
+}
+
+function printExchangeResults(results){
+  var 
+}
+
+document.querySelector('#submit').addEventListener('click', function(event, exchangeRes) {
+  event.preventDefault
 
   var inputVal = document.getElementById('current').value
-  console.log(inputVal);
 
   var exchangeEl = document.querySelector('#final-exchange')
 
   exchangeEl.innerHTML = exchangeRes
 
-}
-
-exchangeSubmit.addEventListener('submit', function(event) {
-  event.preventDefault
-  
   
 })
     
@@ -73,7 +77,7 @@ exchangeSubmit.addEventListener('submit', function(event) {
                     response.json().then(function (data) {
                       console.log(data)
                     eventsContainerEl.textContent = '';
-                    for (var i = 0; i < 20; i++) {
+                    for (var i = 0; i < 9; i++) {
                         printResultsEvents(data._embedded.events[i]);
                     }
                     })
@@ -93,9 +97,16 @@ exchangeSubmit.addEventListener('submit', function(event) {
         var toStr = to.replace(/[^a-zA-Z ]/g, '');
         var city = searchParamsArr[2].split('=').pop();
 
+        var date = searchParamsArr[3].split('=').pop();
+        var fromData = searchParamsArr[4].split('=').pop();
+        var toData = searchParamsArr[5].split('=').pop();
+
         getEventsQuery(city);
 
-        getExchangeRates(fromStr,toStr,'1');
+        getExchangeRates(fromData,toData,'1');
+        printExchangeResultLabel(fromStr, toStr)
+        printExchangeResults(fromData,toData)
+
       };
 
       getParams();
