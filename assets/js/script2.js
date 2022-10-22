@@ -96,12 +96,15 @@ document.querySelector('#submit').addEventListener('click', function(event, exch
         var searchParamsArr = document.location.search.split('&');
         //Get the query and format values
         var from = searchParamsArr[0].split('=').pop();
+        var fromStr = from.replace(/[^a-zA-Z ]/g, '');
+
         var to = searchParamsArr[1].split('=').pop();
+        var toStr = to.replace(/[^a-zA-Z ]/g, '');
         var city = searchParamsArr[2].split('=').pop();
 
         getEventsQuery(city);
 
-        getExchangeRates(from,to,'1');
+        getExchangeRates(fromStr,toStr,'1');
       };
 
       getParams();
