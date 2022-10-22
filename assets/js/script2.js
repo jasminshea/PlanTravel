@@ -70,7 +70,6 @@ document.querySelector('#submit').addEventListener('click', function(event, exch
 
 
     var getEventsQuery = function (city) {
-        console.log('date');
         var eventUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?size=10&city=' + city + '&apikey=fwQUN4eQAOHYscFPSE5zrM9VO4cX5QdI';
         fetch(eventUrl)
             .then(function(response) {
@@ -92,8 +91,12 @@ document.querySelector('#submit').addEventListener('click', function(event, exch
         var searchParamsArr = document.location.search.split('&');
         //Get the query and format values
         var from = searchParamsArr[0].split('=').pop();
+        var fromStr = from.replace(/[^a-zA-Z ]/g, '');
+
         var to = searchParamsArr[1].split('=').pop();
+        var toStr = to.replace(/[^a-zA-Z ]/g, '');
         var city = searchParamsArr[2].split('=').pop();
+
         var date = searchParamsArr[3].split('=').pop();
         var fromData = searchParamsArr[4].split('=').pop();
         var toData = searchParamsArr[5].split('=').pop();
@@ -102,6 +105,7 @@ document.querySelector('#submit').addEventListener('click', function(event, exch
 
         getExchangeRates(fromData,toData,'1');
         printExchangeResults(from, to, fromData, toData)
+
       };
 
       getParams();
