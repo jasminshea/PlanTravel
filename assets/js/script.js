@@ -24,7 +24,7 @@ document.getElementById('continue').addEventListener('click', function() {
   localStorage.setItem("city", city) 
   localStorage.setItem("date", date)  
 
-  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date
+  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date + '&startData=' + startData + '&destData=' + destData
 
   location.href = newUrl
 })
