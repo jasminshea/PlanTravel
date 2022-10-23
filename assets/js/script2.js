@@ -109,10 +109,6 @@ document.querySelector('#submit').addEventListener('click', function(event) {
         var toStr = to.replace(/[^a-zA-Z ]/g, '');
         var city = searchParamsArr[2].split('=').pop();
 
-        var date = searchParamsArr[3].split('=').pop();
-        var fromData = searchParamsArr[4].split('=').pop();
-        var toData = searchParamsArr[5].split('=').pop();
-
         getEventsQuery(city);
 
         printExchangeResultLabel(fromStr, toStr)
