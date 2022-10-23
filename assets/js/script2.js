@@ -53,8 +53,8 @@ document.querySelector('#submit').addEventListener('click', function(event) {
 
   var searchParamsArr = document.location.search.split('&');
 
-  var fromData = searchParamsArr[4].split('=').pop();
-  var toData = searchParamsArr[5].split('=').pop();
+  var fromData = searchParamsArr[3].split('=').pop();
+  var toData = searchParamsArr[4].split('=').pop();
 
   console.log(fromData);
   console.log(toData);
