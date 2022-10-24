@@ -15,18 +15,16 @@ document.getElementById('continue').addEventListener('click', function() {
   var start = document.getElementById('startloc').value
   var dest = document.getElementById('dest').value
   var city = document.getElementById('city').value
-  var date = document.getElementById('date').value
   var startData = document.querySelector("#countries"  + " option[value='" + start + "']").dataset.value;
   var destData = document.querySelector("#countries"  + " option[value='" + dest + "']").dataset.value;
 
   localStorage.setItem("start", start)
   localStorage.setItem("dest", dest) 
   localStorage.setItem("city", city) 
-  localStorage.setItem("date", date)
   localStorage.setItem("startData", startData)
   localStorage.setItem("destData", destData)  
 
-  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date + '&startData=' + startData + '&destData=' + destData
+  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&startData=' + startData + '&destData=' + destData
 
   location.href = newUrl
 })
@@ -36,15 +34,14 @@ function renderPreviousInputs() {
   var start = localStorage.getItem("start")
   var dest = localStorage.getItem("dest")
   var city = localStorage.getItem("city")
-  var date = localStorage.getItem("date")
   var startData = localStorage.getItem("startData")
   var destData = localStorage.getItem("destData")
 
   var previousLink = document.getElementById('previous')
 
-  previousLink.textContent = start + " > " + dest + ": " + city + " " + date
+  previousLink.textContent = start + " > " + dest + ": " + city + " " 
 
-  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&date=' + date + '&startData=' + startData + '&destData=' + destData
+  var newUrl = 'results.html?start=' + start + '&dest=' + dest + '&city=' + city + '&startData=' + startData + '&destData=' + destData
   
   previousLink.setAttribute('href', newUrl)
 }
